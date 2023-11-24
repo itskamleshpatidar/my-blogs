@@ -1,0 +1,16 @@
+<h1>My Blogs</h1>
+
+<%= link_to 'Write a New Blog', new_blog_path %>
+<% if @blogs.any? %>
+  <ul>
+    <% @blogs.each do |blog| %>
+      <li>
+        <strong><%= blog.title %></strong>
+        <p><%= blog.content %></p>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You haven't written any blogs yet. <%= link_to 'Write one now!', new_blog_path %></p>
+<% end %>
+
